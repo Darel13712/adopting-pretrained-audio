@@ -1,0 +1,5 @@
+,Rows,Users,Items,TracksMedian,TracksMin,TracksMax,PlaysMedian,PlaysMin,PlaysMax
+Train,5371381,21018,55262,142,1,4427,318,1,126907
+Val,48787,2459,23625,11,1,319,17,1,713
+HotTest,280745,10238,45002,18,1,369,26,1,2516
+ColdTest,23269,4553,589,3,1,85,5,1,820
