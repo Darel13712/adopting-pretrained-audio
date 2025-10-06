@@ -8,10 +8,10 @@ from sklearn.preprocessing import LabelEncoder
 
 def load_dataset(dataset):
     project_folder = '~/pretrained_tors/'
-    train = pd.read_parquet(project_folder + f'data/{dataset}/train.pqt')
-    val = pd.read_parquet(project_folder + f'data/{dataset}/val.pqt')
-    hot_test = pd.read_parquet(project_folder + f'data/{dataset}/hot_test.pqt')
-    cold_test = pd.read_parquet(project_folder + f'data/{dataset}/cold_test.pqt')
+    train = pd.read_parquet(project_folder + f'data/train.pqt')
+    val = pd.read_parquet(project_folder + f'data/val.pqt')
+    hot_test = pd.read_parquet(project_folder + f'data/hot_test.pqt')
+    cold_test = pd.read_parquet(project_folder + f'data/cold_test.pqt')
 
 
     train['item_id'] = train['track_id']

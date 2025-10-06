@@ -154,7 +154,7 @@ def main():
         if shuffle:
             np.random.shuffle(embs)
 
-    user_embs = np.stack(train.groupby('user_id')['item_id'].apply(lambda items: embs[items].mean(axis=0)).values) if user_init else None
+    user_embs = np.stack(train.groupby('user_id')['item_id'].apply(lambda items: embs[items].mean(axis=0)).values) if (user_init and embs is not None) else None
 
     Dataset = InteractionDataset if sample_type == "user" else InteractionDatasetItems
 
@@ -166,7 +166,7 @@ def main():
 
     model = ShallowEmbeddingModel(
         train.user_id.nunique(),
-        train.item_id.nunique(),
+        len(ie.classes_),  # Total number of items including cold test items
         emb_dim_in,
         precomputed_item_embeddings=embs,
         precomputed_user_embeddings=user_embs,
